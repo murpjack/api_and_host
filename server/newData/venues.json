@@ -1,0 +1,35 @@
+{
+  "dining": [{
+      "_id": 3,
+      "approvalStatus": "NOT_APPROVED",
+      "name": "The Cat Lounge",
+      "description": "Welcome to The Cat Lounge! Coventry’s first cat café.",
+      "priceRating": 0,
+      "telephone": "01234567890",
+      "coords": [52.406671, -1.513682],
+      "theme": 0,
+      "foodMenuUrl": "site.com/url",
+      "hasGlutenFreeOptions": false,
+      "hasVeganOptions": false,
+      "hasWheelchairAccess": true,
+      "hasBabyChangingFacilities": false
+    }
+  ],
+  "leisure": [{
+      "_id": 3,
+      "approvalStatus": "NOT_APPROVED",
+      "name": "Teezers Crazy Golf",
+      "description": "A fun day or night of crazy golf, clubhouse cocktails and street food.",
+      "priceRating": 0,
+      "telephone": "024 7655 0884",
+      "theme": 1,
+      "coords": [52.4052265,-1.5186659],
+      "foodMenuUrl": "https://www.teezersgolf.co.uk/clubhouse-cocktails-street-food/",
+      "hasGlutenFreeOptions": true,
+      "hasVeganOptions": true,
+      "hasWheelchairAccess": false,
+      "hasBabyChangingFacilities": false,
+      "activityLevel": 0
+    }
+  ]
+}

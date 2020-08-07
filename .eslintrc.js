@@ -4,16 +4,24 @@ const off = "off";
 
 module.exports = {
   extends: [
-    "eslint:recommended"
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
   ],
+  parser: "babel-eslint",
   parserOptions: {
-    ecmaVersion: 6
+    ecmaVersion: 6,
+    sourceType: "module",
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
   env: {
     browser: true,
-    es6: true
+    node: true,
+    es6: true,
   },
   rules: {
-    "prefer-const": error
-  }
+    "prefer-const": error,
+  },
 };
