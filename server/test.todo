@@ -2,6 +2,7 @@
 -[] Start connection to Mongo before All tests. // beforeAll()
 -[] Empty all collections after each test. // afterEach()
 -[] Delete/Drop all collections from DB; close DB connection. // afterAll()
+-[] Add TypeScript to ./server files.
 
 # _TESTS_
 ## DB
