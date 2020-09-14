@@ -1,0 +1,16 @@
+# Setup
+-[] Start connection to Mongo before All tests. // beforeAll()
+-[] Empty all collections after each test. // afterEach()
+-[] Delete/Drop all collections from DB; close DB connection. // afterAll()
+-[] Add TypeScript to ./server files.
+
+# _TESTS_
+## DB
+-[] tests DB connects/starts correctly.
+
+## API 
+-[] saves/POST new entry to venues collection.
+-[] doesn't save/POST a new entry with duplicate venueID to venues.
+-[] GETs the {./endpoint name } successfully. // status returned is 200
+-[] UPDATEs information on an existing entry.
+-[] DELETEs one entry from venues collection.
