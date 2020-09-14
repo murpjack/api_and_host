@@ -1,59 +1,21 @@
 {
   "name": "api_and_host",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A localhost server built using Node.js and an api that runs on the same server.",
+  "homepage": "https://github.com/murpjack/api_and_host#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/murpjack/api_and_host.git"
   },
-  "license": "MIT",
   "scripts": {
     "run-server": "nodemon --exec babel-node ./server/index.js",
     "webpack": "webpack -wd"
   },
-  "type": "module",
-  "dependencies": {
-    "@types/express": "^4.17.7",
-    "axios": "^0.19.2",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.20.3",
-    "esm": "^3.2.25",
-    "express": "^4.17.1",
-    "fluture": "^12.3.1",
-    "handlebars": "^4.7.6",
-    "html-webpack-plugin": "^4.3.0",
-    "mongodb": "^3.6.0",
-    "mongoose": "^5.9.7",
-    "nodemon": "^2.0.4",
-    "prettier": "^2.0.5",
-    "ramda": "^0.27.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "require-dir-all": "^0.4.15"
-  },
   "bugs": {
     "url": "https://github.com/murpjack/api_and_host/issues"
   },
-  "homepage": "https://github.com/murpjack/api_and_host#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.10.4",
-    "@babel/core": "^7.10.5",
-    "@babel/node": "^7.10.4",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "@babel/plugin-transform-runtime": "^7.10.4",
-    "@babel/polyfill": "^7.10.4",
-    "@babel/preset-env": "^7.10.4",
-    "@babel/preset-react": "^7.10.4",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "babel-loader": "^8.1.0",
-    "prop-types": "^15.7.2",
-    "ts-loader": "^8.0.1",
-    "typescript": "~3.7.2",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12"
-  }
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {},
+  "devDependencies": {}
 }

@@ -1,4 +1,4 @@
-const Plan = require("../models/plan");
+const Plan = require("../models/selection");
 
 const createPlan = (req, res) => {
   const body = req.body;
@@ -57,6 +57,7 @@ const updatePlan = async (req, res) => {
     plan.approvalStatus = body.approvalStatus;
     plan.priceRating = body.priceRating;
     plan.diningID = body.diningID;
+    plan.diner = body.diner;
     plan.activityID = body.activityID;
     plan.adviceID = body.adviceID;
     plan.createdBy = body.createdBy;

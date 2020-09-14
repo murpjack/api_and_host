@@ -22,4 +22,5 @@ const dinerSchema = new Schema(
   }
 );
 
+module.exports.dinerSchema = dinerSchema;
 module.exports = mongoose.model("Diner", dinerSchema);

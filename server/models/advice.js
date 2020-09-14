@@ -10,4 +10,5 @@ const AdviceSchema = new Schema(
   { timestamps: true }
 );
 
+module.exports.activeSchema = AdviceSchema;
 module.exports = mongoose.model("advice", AdviceSchema);

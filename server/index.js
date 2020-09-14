@@ -8,9 +8,8 @@ const site = require("./static/site");
 const PORT = 8080;
 const app = express();
 
-// DATABASE
+// // DATABASE
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
-db.once("open", () => console.log("MongoDB connection success"));
 
 // API
 app.use("/api", routes.leisureRouter);
