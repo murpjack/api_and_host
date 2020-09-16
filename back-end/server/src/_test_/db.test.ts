@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 import * as dbHandler from "./db-handler";
 import { createMockUser, createUser } from "../controllers";
 import { mockUser } from "./dummy-data";

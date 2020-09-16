@@ -8,8 +8,6 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 // app.use("/api", router);
 
-app.use("/", (req: any,res: any) => {
-	res.send("Happy")
-})
+app.use("/", (req: any,res: any) => res.send("Happy"));
 
 app.listen(PORT, () => console.log(`Server on http://localhost:${PORT}/`));

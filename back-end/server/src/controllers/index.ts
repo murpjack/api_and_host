@@ -3,7 +3,7 @@ import {userType} from "../types";
 
 export const getAllUsers = async (req: any, res: any) => {
   await userModel
-    .find({}, (error: any, users: userType[]) => {
+    .find({}, (error: any, users: any) => {
       if (error) { return res.status(400).json({ success: false, error }) }
       
       if (!users.length) {
