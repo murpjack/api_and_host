@@ -8,7 +8,6 @@
     "url": "git+https://github.com/murpjack/api_and_host.git"
   },
   "scripts": {
-    "run-server": "nodemon --exec babel-node ./server/index.js",
     "webpack": "webpack -wd"
   },
   "bugs": {

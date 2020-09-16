@@ -1,5 +1,5 @@
+(module.exports = [
 {
-  "data": [{
     "_id": 0,
     "approvalStatus": "APPROVED",
     "name": "Romatic",
@@ -29,5 +29,5 @@
     "activityID": 2,
     "adviceID": 2,
     "createdBy": "Jack"
-  }]
-}
+  }
+  ])

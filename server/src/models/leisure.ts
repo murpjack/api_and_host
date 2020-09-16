@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const dinerSchema = new Schema(
+export const activitySchema = new Schema(
   {
     _id: Number,
     approvalStatus: String,
@@ -16,11 +16,13 @@ const dinerSchema = new Schema(
     hasVeganOptions: Boolean,
     hasWheelchairAccess: Boolean,
     hasBabyChangingFacilities: Boolean,
+    activityLevel: Number,
   },
   {
+    createdBy: String,
     timestamps: true,
   }
 );
 
-module.exports.dinerSchema = dinerSchema;
-module.exports = mongoose.model("Diner", dinerSchema);
+export const activityModel = mongoose.model("activity", activitySchema);
+export default activityModel;

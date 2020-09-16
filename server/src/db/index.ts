@@ -1,30 +1,41 @@
-const mongoose = require("mongoose");
-// const Future = require("fluture");
+import mongoose from "mongoose";
+const fs = require("fs");
 
 const m = require("require-dir-all")("../models", { recursive: true });
-const d = require("require-dir-all")("../data", { recursive: true });
+const d = require("require-dir-all")("../seeds", { recursive: true });
 
 const url = "mongodb://localhost:27017/planner_db";
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
 // Connect to MongoDB
 mongoose.connect(url, options).catch((e) => console.error(e.message));
-
+ 
 // Clear collections first, whilst on local server
-m.dining.deleteMany({}, (rej) => rej && console.error("remove dining"));
-m.leisure.deleteMany({}, (rej) => rej && console.error("remove activities"));
-m.advice.deleteMany({}, (rej) => rej && console.error("remove advice"));
-m.selection.deleteMany({}, (rej) => rej && console.error("remove plans"));
-m.plan.deleteMany({}, (rej) => rej && console.error("remove plans"));
+const collections = mongoose.connection.collections;
+for (const key in collections) {
+  console.log(123,key);
+  collections[key].deleteMany({}, (rej: any) => rej && console.error(rej.toString()));
+}
+
+// m.dining.deleteMany({}, (rej) => rej && console.error("remove dining"));
+// m.leisure.deleteMany({}, (rej) => rej && console.error("remove activities"));
+// m.advice.deleteMany({}, (rej) => rej && console.error("remove advice"));
+// m.selection.deleteMany({}, (rej) => rej && console.error("remove plans"));
+// m.plan.deleteMany({}, (rej) => rej && console.error("remove plans"));
 
 // Add initial data to collections
-m.dining.insertMany(d.dining.data, (rej) => rej);
-m.leisure.insertMany(d.leisure.data, (rej) => rej);
-m.advice.insertMany(d.advice.data, (rej) => rej);
-m.selection.insertMany(d.itineraries.data, (rej) => rej);
-// m.plan.insertMany(d.itineraries.data, console.log);
+fs.readdirSync("./src/seeds/")
+  .map((fileName: string) => {
+    const collectionName = fileName.split(".")[0];
+    console.log(collectionName);
 
-const db = mongoose.connection;
+    // m.dining.insertMany(d.dining.data, (rej) => rej);
+    // m.leisure.insertMany(d.leisure.data, (rej) => rej);
+    // m.advice.insertMany(d.advice.data, (rej) => rej);
+    // m.selection.insertMany(d.itineraries.data, (rej) => rej);
+    // m.plan.insertMany(d.itineraries.data, console.log);
+  });
+
 /*
  const itineraries = {
     _id: plan._id,
@@ -38,13 +49,15 @@ const db = mongoose.connection;
     createdBy: plan.createdBy
  }
 */
+
 // DATABASE
+const db = mongoose.connection;
 db.once("open", () => {
   console.log("MongoDB connection success");
-  m.selection
-    .findOneAndUpdate({ _id: 0 }, { diner: d.dining.data[0] }, { new: true })
-    // .populate("diner")
-    .then(console.log);
+  // m.selection
+  //   .findOneAndUpdate({ _id: 0 }, { diner: d.dining.data[0] }, { new: true })
+  //   // .populate("diner")
+  //   .then(console.log);
 
   // db.collection("selections")
   //   .aggregate([
@@ -69,4 +82,4 @@ db.once("open", () => {
 //   console.log(1, dbProducts);
 // });
 
-module.exports = db;
+export default db;

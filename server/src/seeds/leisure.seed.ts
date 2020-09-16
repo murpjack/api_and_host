@@ -1,5 +1,5 @@
-{
-  "data": [{
+(module.exports = [
+  {
       "_id": 0,
       "approvalStatus": "APPROVED",
       "name": "Ice skating",
@@ -47,5 +47,4 @@
       "hasBabyChangingFacilities": true,
       "activityLevel": 0
     }
-  ]
-}
+  ])

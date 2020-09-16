@@ -1,5 +1,4 @@
-{
-  "data": [
+(module.exports = [
   {
     "_id": 0,
     "approvalStatus": "APPROVED",
@@ -30,5 +29,4 @@
     "approvalStatus": "APPROVED",
     "description": "Marry someone with a different favourite cereal than you so they don't eat yours."
   }
-]
-}
+])

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const schema = require("require-dir-all")("../models", { recursive: true });
 const din = require("../models/dining");
-// console.log(1234, schema);
+
 const Selection = new Schema(
   {
     _id: Number,

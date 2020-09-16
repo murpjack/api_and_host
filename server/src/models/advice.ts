@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const AdviceSchema = new Schema(
+export const adviceSchema = new Schema(
   {
     _id: Number,
     approvalStatus: String,
@@ -10,5 +10,5 @@ const AdviceSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports.activeSchema = AdviceSchema;
-module.exports = mongoose.model("advice", AdviceSchema);
+export const adviceModel = mongoose.model("advice", adviceSchema);
+export default adviceModel;

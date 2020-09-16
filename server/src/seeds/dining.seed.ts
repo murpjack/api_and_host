@@ -1,5 +1,5 @@
+(module.exports = [
 {
-  "data": [{
       "_id": 0,
       "approvalStatus": "NOT_APPROVED",
       "name": "Bean & Leaf",
@@ -44,5 +44,4 @@
       "hasWheelchairAccess": true,
       "hasBabyChangingFacilities": true
     }
-  ]
-}
+])
