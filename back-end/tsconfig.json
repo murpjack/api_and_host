@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "removeComments": true,
+        "target": "es6",
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitAny": true,
+        "esModuleInterop":true,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "server/dist",
+        "baseUrl": "."
+    },
+    "include": [
+        "server/src/**/*"
+    ],
+    "exclude": [
+      "node_modules",
+      "server/src/_test_/**/*",
+      "**/*.test.ts",
+      "types.ts"
+    ]
+}

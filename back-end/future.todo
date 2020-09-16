@@ -1,0 +1,5 @@
+- [] Write a node server
+- [] Create data for something as data.json
+- [] Write api tests that fail
+- [] Connect a route to the server
+- [] Api should pass test
