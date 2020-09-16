@@ -37,7 +37,6 @@ describe("API", () => {
 	it("reaches route '/getallusers' and returns status true.", async done => {
 		const response = await request(app).get(`${apiBaseUrl}/getallusers`);
 	
-		console.log(1, response);
 		expect(response.status).toBe(200);
 		expect(response.status).not.toEqual(400);
 		expect(response.body.success).toBe(true);
