@@ -24,10 +24,10 @@ router.delete("/user/removesingleuser", usersControllers.deleteUser);
 /**
  * Routes for advice.
  */
-router.get("/advice/getallwisdom", adviceControllers.getWisdom);
-// router.post("/advice/addwisdom", adviceControllers.createWisdom);
-// router.put("/advice/updatewisdom/:id", adviceControllers.updateWisdom);
-// router.delete("/advice/removewisdom/:id", adviceControllers.deleteWisdom);
+router.get("/advice/getalladvice", adviceControllers.getAdvice);
+// router.post("/advice/addadvice", adviceControllers.createAdvice);
+// router.put("/advice/updateadvice/:id", adviceControllers.updateAdvice);
+// router.delete("/advice/removeadvice/:id", adviceControllers.deleteAdvice);
 
 /**
  * Routes for dining.

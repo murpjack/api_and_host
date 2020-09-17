@@ -1,4 +1,5 @@
-import adviceModel = require("../models/advice");
+import adviceModel from "../models/advice";
+import { notValid, notReturned, notFound, notUpdated, idAlreadyExists } from "./setupControllers";
 
 // const createWisdom = (req, res) => {
 //   const body = req.body;
@@ -88,7 +89,7 @@ import adviceModel = require("../models/advice");
 //   }).catch((err) => console.log(err));
 // };
 
-const getWisdom = async (req: any, res: any) => {
+export const getAdvice = async (req: any, res: any) => {
   await adviceModel.find({}, (error: any, data: any) => {
     if (error || !data.length) { return notFound(error) }
 
@@ -97,9 +98,9 @@ const getWisdom = async (req: any, res: any) => {
   }).catch(notReturned);
 };
 
-module.exports = {
-  // createWisdom,
-  // updateWisdom,
-  // deleteWisdom,
-  getWisdom
-};
+export default {
+  // createAdvice,
+  // updateAdvice,
+  // deleteAdvice,
+  getAdvice
+}
