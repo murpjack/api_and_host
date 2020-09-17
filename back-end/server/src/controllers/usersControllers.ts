@@ -1,5 +1,4 @@
 import userModel from "../models/user";
-import {userType} from "../types";
 
 export const getAllUsers = async (req: any, res: any) => {
   await userModel
@@ -123,6 +122,13 @@ export const deleteUser = async (req: any, res: any) => {
 };
 
 
+interface userType {
+  _id: number;
+  userId: string;
+  age: number;
+  name: string;
+  favouriteColour: string;
+}
 export const createMockUser = async (user: userType) => {
   if (!user) throw new Error("Missing user");
   await userModel.create(user);

@@ -52,18 +52,18 @@ export const seedDatabase = async () => {
           const fileNameNoExtension = fileName.split(".")[0];
           if(fileNameNoExtension !== "itineraries") {
             collections.map(collectionName => {
-                if(fileNameNoExtension === collectionName) {
-                  // Data for seeding
-                  const data = fs.readFileSync(`${path}/${fileName}`, {encoding:'utf8'})
-                  if (typeof data === "string") {
-                    const d = JSON.parse(data).data;
-                    mongoose.connection.collections[fileNameNoExtension].insertMany(d, 
-                      (rej: any) => rej && console.error(rej.toString()));  
-                  }
+              if(fileNameNoExtension === collectionName) {
+                // Data for seeding
+                const data = fs.readFileSync(`${path}/${fileName}`, {encoding:'utf8'})
+                if (typeof data === "string") {
+                  const d = JSON.parse(data).data;
+                  mongoose.connection.collections[fileNameNoExtension].insertMany(d, 
+                    (rej: any) => rej && console.error(rej.toString()));  
                 }
-              })
-            }
-          });
+              }
+            })
+          }
+      });
 };
 
 export async function dropAllCollections() {

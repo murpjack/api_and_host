@@ -6,7 +6,7 @@ import * as dbHandler from "./db-handler";
 // Node instance
 import app from "../app";
 
-import { mockUser, duplicateUser, updatedUser } from "./dummy-data";
+import { mockUser, duplicateUser, updatedUser } from "./user-fake-data";
 
 describe("Setup", () => {
 	it("is just testing.", () => {
