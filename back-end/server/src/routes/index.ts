@@ -2,10 +2,10 @@ import express from'express';
 
 export const router = express.Router();
 
-import adviceControllers from "../controllers/adviceControllers";
-import diningControllers from "../controllers/diningControllers";
-import activitiesControllers from "../controllers/activitiesControllers";
 import usersControllers from "../controllers/usersControllers";
+// import adviceControllers from "../controllers/adviceControllers";
+import diningControllers from "../controllers/diningControllers";
+// import activitiesControllers from "../controllers/activitiesControllers";
 // const planControllers = require("../controllers/itinerariesControllers");
 
 // This is a test route!!
@@ -24,7 +24,7 @@ router.delete("/user/removesingleuser", usersControllers.deleteUser);
 /**
  * Routes for advice.
  */
-router.get("/advice/getallwisdom", adviceControllers.getWisdom);
+// router.get("/advice/getallwisdom", adviceControllers.getWisdom);
 // router.post("/advice/addwisdom", adviceControllers.createWisdom);
 // router.put("/advice/updatewisdom/:id", adviceControllers.updateWisdom);
 // router.delete("/advice/removewisdom/:id", adviceControllers.deleteWisdom);
@@ -40,7 +40,7 @@ router.get("/dining/getallvenues", diningControllers.getDiners);
 /**
  * Routes for activities.
  */
-router.get("/activities/getallvenues", activitiesControllers.getActivities);
+// router.get("/activities/getallvenues", activitiesControllers.getActivities);
 // router.post("/activities/addvenue", activitiesControllers.createActivity);
 // router.put("/activities/updatevenuedetail/:id", activitiesControllers.updateActivity);
 // router.delete("/activities/removevenue/:id", activitiesControllers.deleteActivity);

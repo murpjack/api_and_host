@@ -1,4 +1,5 @@
 import userModel from "../models/user";
+// import { notValid, notFound, notUpdated, idAlreadyExists } from "./setupControllers";
 
 export const getAllUsers = async (req: any, res: any) => {
   await userModel

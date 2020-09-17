@@ -1,58 +1,46 @@
 import dinerModel from "../models/dining";
+import { notValid, notReturned, notFound, notUpdated, idAlreadyExists } from "./setupControllers";
 
-// const createDiner = (req, res) => {
+// export const createDiner = async (req: any, res: any) => {
 //   const body = req.body;
-//   console.log("res", res);
 
-//   if (!body) {
-//     return res.status(400).json({
-//       success: false,
-//       message: "You must provide a diner",
-//     });
-//   }
+//   if (!body) { return notValid(res) }
 
 //   const diner = new Diner(body);
-//   console.log("diner", diner);
-//   if (!diner) {
-//     // TODO: handle Error response
-//     return res.status(400).json({ success: false, message: "err" });
-//   }
+//   if (!diner) { return notValid(res) }
 
-//   diner
-//     .then((d) => ({ ...d, ["approvalStatus"]: "NOT_APPROVED" }))
-//     .save()
-//     .then(() =>
-//       res.status(201).json({
-//         success: true,
-//         id: diner._id,
-//         message: "Diner created!",
-//       })
-//     )
-//     .catch((error) =>
-//       res.status(400).json({
-//         error,
-//         message: "Diner not created!",
-//       })
-//     );
+//   // Don't add any items with a duplicate id
+//   const duplicates = await userModel
+//     .find(query, (error: any, data: any) => {
+//       if (error) { return res.status(400).json({ success: false, error }) }
+
+//       if (data.length !== 0) { return idAlreadyExists(res) } 
+
+//     })
+//     .catch(notReturned);
+
+//   if (duplicates.length === 0) { 
+//     diner
+//       .then((d) => ({ ...d, ["approvalStatus"]: "NOT_APPROVED" }))
+//       .save()
+//       .then(() =>
+//         res.status(201).json({
+//           success: true,
+//           id: diner._id,
+//           message: "Diner created!",
+//         })
+//       )
+//       .catch(notUpdated);
+//   }
 // };
 
-// const updateDiner = async (req, res) => {
+// export const updateDiner = async (req: any, res: any) => {
 //   const body = req.body;
+//   if (!body) { return notValid(res) }
 
-//   if (!body) {
-//     return res.status(400).json({
-//       success: false,
-//       error: "You must provide a body to update",
-//     });
-//   }
+//   Diner.findOne({ _id: req.params.id }, (error: any, diner: any) => {
+//     if (error) { return notFound(error) }
 
-//   Diner.findOne({ _id: req.params.id }, (err, diner) => {
-//     if (err) {
-//       return res.status(404).json({
-//         err,
-//         message: "Diner not found!",
-//       });
-//     }
 //     diner._id = body._id;
 //     diner.approvalStatus = "NOT_APPROVED";
 //     diner.name = body.name;
@@ -76,39 +64,26 @@ import dinerModel from "../models/dining";
 //           message: "Diner updated!",
 //         });
 //       })
-//       .catch((error) => {
-//         return res.status(404).json({
-//           error,
-//           message: "Diner not updated!",
-//         });
-//       });
+//       .catch(notUpdated);
 //   });
 // };
 
-// const deleteDiner = async (req, res) => {
-//   await Diner.findOneAndDelete({ _id: req.params.id }, (err, diner) => {
-//     if (err) {
-//       return res.status(400).json({ success: false, error: err });
-//     }
+// export const deleteDiner = async (req: any, res: any) => {
+//   await Diner.findOneAndDelete({ _id: req.params.id }, (error: any, data: any) => {
+//     if (error || !data) { return notFound(error) }
 
-//     if (!diner) {
-//       return res.status(404).json({ success: false, error: `Diner not found` });
-//     }
+//     return res.status(200).json({ success: true, data });
 
-//     return res.status(200).json({ success: true, data: diner });
-//   }).catch((err) => console.log(err));
+//   }).catch(notReturned);
 // };
 
 export const getDiners = async (req: any, res: any) => {
-  await dinerModel.find({}, (error: any, diners: any) => {
-    if (error) {
-      return res.status(400).json({ success: false, error });
-    }
-    if (!diners.length) {
-      return res.status(404).json({ success: false, error: `Diner not found` });
-    }
-    return res.status(200).json({ success: true, data: diners });
-  }).catch((error) => console.log(error));
+  await dinerModel.find({}, (error: any, data: any) => {
+    if (error || !data.length) { return notFound(error) }
+
+    return res.status(200).json({ success: true, data });
+
+  }).catch(notReturned);
 };
 
 export default {
