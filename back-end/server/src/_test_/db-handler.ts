@@ -2,8 +2,6 @@ import fs from "fs";
 import mongoose from "mongoose";
 import { MongoMemoryServer } from "mongodb-memory-server";
 
-// import userModel from "../models";
-
 const mongod = new MongoMemoryServer();
 
 /**
@@ -45,28 +43,27 @@ export const clearDatabase = async () => {
  * Seed user data for user db collection.
  */
 export const seedDatabase = async () => {
-  const collection = mongoose.connection.collections["users"];
-  // TODO: Use fs and REGEX to find a relative '.seed' file for each collection.
-  // collection.insertMany(data, (rej: any) => rej);
-
-    const collections = mongoose.connection.collections;
-    console.log(2, collections);
-    fs.readdirSync("./server/src/seeds/")
+    const collections = Object.keys(mongoose.connection.collections);
+    // console.log(2, collections);
+    const path = "./server/src/seeds/";
+    fs.readdirSync(path)
       .map(fileName => {
-        const collectionName = fileName.split(".")[0];
-        // console.log(1,collectionName);
-
-        // Data for seeding
-        const data = fs.readFileSync(`./server/src/seeds/${fileName}`, {encoding:'utf8'})
-
-        if (data && typeof data === "string") {
-          const d = JSON.parse(data);
-          collections[collectionName].insertMany(d.data, (rej: any) => rej && console.error(rej.toString()));  
-        }
-        
-      });
-
-
+          // TODO: Use REGEX to find a relative '.seed' file for each collection.
+          const fileNameNoExtension = fileName.split(".")[0];
+          if(fileNameNoExtension !== "itineraries") {
+            collections.map(collectionName => {
+                if(fileNameNoExtension === collectionName) {
+                  // Data for seeding
+                  const data = fs.readFileSync(`${path}/${fileName}`, {encoding:'utf8'})
+                  if (typeof data === "string") {
+                    const d = JSON.parse(data).data;
+                    mongoose.connection.collections[fileNameNoExtension].insertMany(d, 
+                      (rej: any) => rej && console.error(rej.toString()));  
+                  }
+                }
+              })
+            }
+          });
 };
 
 export async function dropAllCollections() {

@@ -26,6 +26,6 @@ export const itinerarySchema = new Schema(
   }
 );
 
-export const planModel = mongoose.model("Itinerary", itinerarySchema);
+export const itineraryModel = mongoose.model("Itinerary", itinerarySchema);
 
-export default planModel;
+export default itineraryModel;

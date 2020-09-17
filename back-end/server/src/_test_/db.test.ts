@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import * as dbHandler from "./db-handler";
-import { createMockUser, createUser } from "../controllers";
+import { createMockUser, createUser } from "../controllers/usersControllers";
 import { mockUser } from "./dummy-data";
 
 /**

@@ -19,10 +19,9 @@ export const activitySchema = new Schema(
     activityLevel: Number,
   },
   {
-    createdBy: String,
     timestamps: true,
   }
 );
 
-export const activityModel = mongoose.model("activity", activitySchema);
+export const activityModel = mongoose.model("Activity", activitySchema);
 export default activityModel;
