@@ -1,20 +1,27 @@
 import userModel from "../models/user";
-// import { notValid, notFound, notUpdated, idAlreadyExists } from "./setupControllers";
+import { notValid, notReturned, notFound, notUpdated, idAlreadyExists } from "./setupControllers";
 
 export const getAllUsers = async (req: any, res: any) => {
-  await userModel
-    .find({}, (error: any, users: any) => {
-      if (error) { return res.status(400).json({ success: false, error }) }
-      
-      if (!users.length) {
-        return res
-          .status(404)
-          .json({ success: false, error: `Sorry, no users found.` });
-      }
+await userModel.find({}, (error: any, data: any) => {
+    if (error || !data.length) { return notFound(error) }
 
-      return res.status(200).json({ success: true, data: users });
-    })
-    .catch((error: any) => res.status(400).json({ error, message: "Users not returned!" }));
+    return res.status(200).json({ success: true, data });
+
+  }).catch(notReturned);
+
+  // await userModel
+  //   .find({}, (error: any, users: any) => {
+  //     if (error) { return res.status(400).json({ success: false, error }) }
+      
+  //     if (!users.length) {
+  //       return res
+  //         .status(404)
+  //         .json({ success: false, error: `Sorry, no users found.` });
+  //     }
+
+  //     return res.status(200).json({ success: true, data: users });
+  //   })
+  //   .catch((error: any) => res.status(400).json({ error, message: "Users not returned!" }));
 };
 
 

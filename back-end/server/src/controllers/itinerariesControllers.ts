@@ -1,4 +1,4 @@
-import itineraryModel from "../models/itinerary";
+import itineraryModel from "../models/itineraries";
 
 // const createPlan = (req, res) => {
 //   const body = req.body;
@@ -95,15 +95,12 @@ import itineraryModel from "../models/itinerary";
 // };
 
 export const getPlans = async (req: any, res: any) => {
-  await itineraryModel.find({}, (error: any, plans: any) => {
-    if (error) {
-      return res.status(400).json({ success: false, error });
-    }
-    if (!plans.length) {
-      return res.status(404).json({ success: false, error: `Plan not found` });
-    }
-    return res.status(200).json({ success: true, data: plans });
-  }).catch((error) => console.log(error));
+    await itineraryModel.find({}, (error: any, data: any) => {
+    if (error || !data.length) { return notFound(error) }
+
+    return res.status(200).json({ success: true, data });
+
+  }).catch(notReturned);
 };
 
 export default {

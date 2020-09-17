@@ -1,4 +1,4 @@
-import adviceSchema = require("../models/advice");
+import adviceModel = require("../models/advice");
 
 // const createWisdom = (req, res) => {
 //   const body = req.body;
@@ -89,17 +89,12 @@ import adviceSchema = require("../models/advice");
 // };
 
 const getWisdom = async (req: any, res: any) => {
-  await adviceSchema.find({}, (error: any, wisdom: any) => {
-    if (error) {
-      return res.status(400).json({ success: false, error });
-    }
-    if (!wisdom.length) {
-      return res
-        .status(404)
-        .json({ success: false, error: `Wisdom not found` });
-    }
-    return res.status(200).json({ success: true, data: wisdom });
-  }).catch((error) => console.log(error));
+  await adviceModel.find({}, (error: any, data: any) => {
+    if (error || !data.length) { return notFound(error) }
+
+    return res.status(200).json({ success: true, data });
+
+  }).catch(notReturned);
 };
 
 module.exports = {

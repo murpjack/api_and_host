@@ -1,4 +1,5 @@
 import activityModel from "../models/activities";
+import { notValid, notReturned, notFound, notUpdated, idAlreadyExists } from "./setupControllers";
 
 // const createActivity = (req, res) => {
 //   const body = req.body;
@@ -93,17 +94,12 @@ import activityModel from "../models/activities";
 // };
 
 export const getActivities = async (req: any, res: any) => {
-  await activityModel.find({}, (error: any, activities: any) => {
-    if (error) {
-      return res.status(400).json({ success: false, error });
-    }
-    if (!activities.length) {
-      return res
-        .status(404)
-        .json({ success: false, error: `Activity not found` });
-    }
-    return res.status(200).json({ success: true, data: activities });
-  }).catch((error) => console.log(error));
+  await activityModel.find({}, (error: any, data: any) => {
+    if (error || !data.length) { return notFound(error) }
+
+    return res.status(200).json({ success: true, data });
+
+  }).catch(notReturned);
 };
 
 export default {
