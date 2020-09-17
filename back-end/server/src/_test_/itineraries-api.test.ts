@@ -9,7 +9,7 @@ import app from "../app";
 import { mockDiner, duplicateDiner, updatedDiner } from "./diners-fake-data";
 
 // Base API path used in this simple app
-const apiBaseUrl = "/api/advice";
+const apiBaseUrl = "/api/plan";
 /**
  * Connect to a new in-memory database before running any tests.
  */
@@ -28,8 +28,8 @@ afterEach(async () => await dbHandler.clearDatabase());
 afterAll(async () => await dbHandler.closeDatabase());
 
 describe("API", () => {
-	it("reaches route '/getalladvice' and returns status true.", async done => {
-		const response = await request(app).get(`${apiBaseUrl}/getalladvice`);
+	it("reaches route '/getallitineraries' and returns status true.", async done => {
+		const response = await request(app).get(`${apiBaseUrl}/getallitineraries`);
 	
 		expect(response.status).toBe(200);
 		expect(response.status).not.toEqual(400);
@@ -38,7 +38,7 @@ describe("API", () => {
 	});
 
 	it("should GET a list from DB.", async done => {
-		const response = await request(app).get(`${apiBaseUrl}/getalladvice`);
+		const response = await request(app).get(`${apiBaseUrl}/getallitineraries`);
 		expect(response.body.data.length).toBeGreaterThanOrEqual(1);
 		done();
 	});
