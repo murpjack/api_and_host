@@ -3,8 +3,7 @@ const Schema = mongoose.Schema;
 
 export const activitySchema = new Schema(
   {
-    _id: Number,
-    activityId: String,
+    _id: String,
     approvalStatus: String,
     name: String,
     description: String,

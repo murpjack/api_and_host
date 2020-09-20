@@ -1,46 +1,34 @@
 { 
   "data": [
 {
-    "_id": 1001,
-    "itineraryId": "ITN001",
+    "_id": "ITN001",
     "approvalStatus": "APPROVED",
     "name": "Romatic",
     "description": "Take him or her out for a night of excitement in the city.",
     "priceRating": 0,
     "dinerId": "DNR001",
-    "diner": {},
     "activityId": "ACT001",
-    "activity": {},
     "adviceId": "ADV001",
-    "advice": {},
     "createdBy": "Jack"
   }, {
-    "_id": 1002,
-    "itineraryId": "ITN002",
+    "_id": "ITN002",
     "approvalStatus": "APPROVED",
     "name": "Casual Coffee",
     "description": "Enjoy an cafe date in the park around lunchtime.",
     "priceRating": "DNR002",
     "dinerId": "ACT002",
-    "diner": {},
     "activityId": "ADV002",
-    "activity": {},
     "adviceId": 1,
-    "advice": {},
     "createdBy": "Jack"
   }, {
-    "_id": 1003,
-    "itineraryId": "ITN003",
+    "_id": "ITN003",
     "approvalStatus": "APPROVED",
     "name": "Sporty",
     "description": "Make a splash, then get some pizza.",
     "priceRating": "DNR003",
     "dinerId": "ACT003",
-    "diner": {},
     "activityId": "ADV003",
-    "activity": {},
     "adviceId": 2,
-    "advice": {},
     "createdBy": "Jack"
   }
   ]

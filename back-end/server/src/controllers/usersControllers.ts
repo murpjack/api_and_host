@@ -131,8 +131,7 @@ export const deleteUser = async (req: any, res: any) => {
 
 
 interface userType {
-  _id: number;
-  userId: string;
+  _id: string;
   age: number;
   name: string;
   favouriteColour: string;

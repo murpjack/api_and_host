@@ -3,8 +3,7 @@ const Schema = mongoose.Schema;
 
 export const itinerarySchema = new Schema(
   {
-    _id: Number,
-    itineraryId: String,
+    _id: String,
     approvalStatus: String,
     name: String,
     description: String,
@@ -12,17 +11,17 @@ export const itinerarySchema = new Schema(
     dinerId: String,
     diner: {
       type: Schema.Types.ObjectId,
-      ref: "Diners",
+      ref: "diners",
     },
     activityId: String,
     activity: {
       type: Schema.Types.ObjectId,
-      ref: "Activities",
+      ref: "activities",
     },
     adviceId: String,
     advice: {
       type: Schema.Types.ObjectId,
-      ref: "Advice",
+      ref: "advice",
     },
   },
   {
