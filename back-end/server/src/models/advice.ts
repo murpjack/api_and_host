@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 export const adviceSchema = new Schema(
   {
     _id: Number,
+    adviceId: String,
     approvalStatus: String,
     description: String,
   },

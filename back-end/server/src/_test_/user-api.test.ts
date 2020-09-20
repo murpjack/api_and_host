@@ -8,12 +8,6 @@ import app from "../app";
 
 import { mockUser, duplicateUser, updatedUser } from "./user-fake-data";
 
-describe("Setup", () => {
-	it("is just testing.", () => {
-		expect(1).toBe(1);
-	});
-});
-
 // Base API path used in this simple app
 const apiBaseUrl = "/api/user";
 /**

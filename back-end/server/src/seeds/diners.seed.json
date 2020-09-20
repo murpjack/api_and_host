@@ -1,8 +1,9 @@
 { 
   "data": [
 {
-      "_id": 0,
-      "approvalStatus": "NOT_APPROVED",
+      "_id": 1001,
+      "dinerId": "DNR001",
+      "approvalStatus": "APPROVED",
       "name": "Bean & Leaf",
       "description": "A family ran independent coffee shop serving you only the best.",
       "priceRating": 0,
@@ -16,7 +17,8 @@
       "hasBabyChangingFacilities": true
     },
     {
-      "_id": 1,
+      "_id": 1002,
+      "dinerId": "DNR002",
       "approvalStatus": "APPROVED",
       "name": "Cosy Club",
       "description": "Coventry Cosy Club is a glorious celebration of different styles.",
@@ -31,7 +33,8 @@
       "hasBabyChangingFacilities": true
     },
     {
-      "_id": 2,
+      "_id": 3,
+      "dinerId": "DNR003",
       "approvalStatus": "APPROVED",
       "name": "Slug & Lettuce",
       "description": "Slug and Lettuce Coventry is set right opposite the Cathedral Ruins, and has a fantastic outs_ide bar and beautiful beer garden.",

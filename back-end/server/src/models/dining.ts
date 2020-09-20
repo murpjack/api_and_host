@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 export const dinerSchema = new Schema(
   {
     _id: Number,
+    dinerId: String,
     approvalStatus: String,
     name: String,
     description: String,

@@ -1,4 +1,5 @@
 import request from "supertest";
+import itineraryModel from "../models/itineraries";
 
 // Setup methods used before/after each test
 import * as dbHandler from "./db-handler";
@@ -30,6 +31,7 @@ afterAll(async () => await dbHandler.closeDatabase());
 describe("API", () => {
 	it("reaches route '/getallvenues' and returns status true.", async done => {
 		const response = await request(app).get(`${apiBaseUrl}/getallvenues`);
+        // itineraryModel.find({}, (error: any, docs: any) => error ? console.error("Error", error) : console.log("Success", docs));
 	
 		expect(response.status).toBe(200);
 		expect(response.status).not.toEqual(400);

@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 export const activitySchema = new Schema(
   {
     _id: Number,
+    activityId: String,
     approvalStatus: String,
     name: String,
     description: String,

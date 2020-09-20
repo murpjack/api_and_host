@@ -1,7 +1,8 @@
 { 
   "data": [
     {
-        "_id": 0,
+        "_id": 1001,
+        "activityId": "ACT001",
         "approvalStatus": "APPROVED",
         "name": "Ice skating",
         "description": "We offer great courses in Ice Skating Lessons & Ice Hockey Lessons.",
@@ -17,7 +18,8 @@
         "activityLevel": 0
       },
       {
-        "_id": 1,
+        "_id": 1002,
+        "activityId": "ACT002",
         "approvalStatus": "APPROVED",
         "name": "Allesley Pitch and Putt",
         "description": "Set in well-maintained parkland. Allesley offers a great day out for the family.",
@@ -33,7 +35,8 @@
         "activityLevel": 0
       },
       {
-        "_id": 2,
+        "_id": 1003,
+        "activityId": "ACT003",
         "approvalStatus": "APPROVED",
         "name": "The Wave, water park",
         "description": "The UK’s newest indoor waterpark is making a splash in the heart of Coventry.",
