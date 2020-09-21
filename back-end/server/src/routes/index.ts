@@ -6,7 +6,7 @@ import usersControllers from "../controllers/usersControllers";
 import adviceControllers from "../controllers/adviceControllers";
 import diningControllers from "../controllers/diningControllers";
 import activitiesControllers from "../controllers/activitiesControllers";
-const planControllers = require("../controllers/itinerariesControllers");
+import planControllers from "../controllers/itinerariesControllers";
 
 // This is a test route!!
 // router.get('/test', async (req, res) => {

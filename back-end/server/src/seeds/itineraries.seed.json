@@ -15,20 +15,20 @@
     "approvalStatus": "APPROVED",
     "name": "Casual Coffee",
     "description": "Enjoy an cafe date in the park around lunchtime.",
-    "priceRating": "DNR002",
-    "dinerId": "ACT002",
-    "activityId": "ADV002",
-    "adviceId": 1,
+    "priceRating": 1,
+    "dinerId": "DNR002",
+    "activityId": "ACT002",
+    "adviceId": "ADV002",
     "createdBy": "Jack"
   }, {
     "_id": "ITN003",
     "approvalStatus": "APPROVED",
     "name": "Sporty",
     "description": "Make a splash, then get some pizza.",
-    "priceRating": "DNR003",
-    "dinerId": "ACT003",
-    "activityId": "ADV003",
-    "adviceId": 2,
+    "priceRating": 2,
+    "dinerId": "DNR003",
+    "activityId": "ACT003",
+    "adviceId": "ADV003",
     "createdBy": "Jack"
   }
   ]

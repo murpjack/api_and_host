@@ -2,6 +2,7 @@ import itineraryModel from "../models/itineraries";
 import { notValid, notReturned, notFound, notUpdated, idAlreadyExists } from "./setupControllers";
 
 function aggregateToItineraries (res: any) {
+	// itineraryModel.find({}, (l, o) => console.log(l,o))
 	itineraryModel.aggregate([
 	    { $match: { approvalStatus: "APPROVED" } },
 	    { $lookup: { from: 'diners', localField: 'dinerId', foreignField: '_id', as: "diner" } },
@@ -10,18 +11,20 @@ function aggregateToItineraries (res: any) {
 	    { $unwind: "$activity" },
 	    { $lookup: { from: 'advice', localField: 'adviceId', foreignField: '_id', as: "advice" } },
 	    { $unwind: "$advice" },
-	    { $project: { 
+	    { $project: {
+		    approvalStatus: 0, 
 	        dinerId: 0,
 	        diner: { approvalStatus: 0 },
 	        activityId: 0,
 	        activity: { approvalStatus: 0 },                         
 	        adviceId: 0,
-	        advice: { approvalStatus: 0, adviceId: 0 },
-	      } 
+	        advice: { approvalStatus: 0 },
+	      }
 	    }
 	    ]).exec((error: any, data: any) => { 
 	    	if(error) { return notFound(error) } 
-	    	res.json({ success: true, data }) 
+	    		console.log(345,data)
+	    	res.status(200).json({ success: true, data }) 
 	    });
 }
 
@@ -123,7 +126,6 @@ export const getPlans = async (req: any, res: any) => {
     await itineraryModel.find({}, (error: any, data: any) => {
     if (error || !data.length) { return notFound(error) }
 	aggregateToItineraries(res)
-    return res.status(200);
 
   }).catch(notReturned);
 };

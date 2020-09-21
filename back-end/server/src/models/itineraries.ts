@@ -9,20 +9,20 @@ export const itinerarySchema = new Schema(
     description: String,
     priceRating: Number,
     dinerId: String,
-    diner: {
-      type: Schema.Types.ObjectId,
-      ref: "diners",
-    },
     activityId: String,
-    activity: {
-      type: Schema.Types.ObjectId,
-      ref: "activities",
-    },
     adviceId: String,
-    advice: {
-      type: Schema.Types.ObjectId,
-      ref: "advice",
-    },
+    // diner: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: "diners",
+    // },
+    // activity: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: "activities",
+    // },
+    // advice: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: "advice",
+    // },
   },
   {
     timestamps: true,
