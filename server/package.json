@@ -23,7 +23,7 @@
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "fluture": "^12.3.1",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "html-webpack-plugin": "^4.3.0",
     "mongodb": "^3.6.0",
     "mongoose": "^5.9.7",
