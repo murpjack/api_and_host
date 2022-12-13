@@ -21,7 +21,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.3",
     "esm": "^3.2.25",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "fluture": "^12.3.1",
     "handlebars": "^4.7.6",
     "html-webpack-plugin": "^4.3.0",
